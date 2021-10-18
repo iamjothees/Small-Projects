@@ -1,0 +1,64 @@
+#container
+{
+    background-color: rgba(248, 183, 61, 0.89);
+    width: 320px;
+    height: 380px;
+    margin: auto;
+    text-align: center;
+    border-radius: 30px;
+}
+
+#displayBox
+{
+    font-size: x-large;
+    padding-right: 15px;
+    border: 2px solid;
+    height: 50px;    
+    text-align: right;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+.operatorsDiv2
+{
+    margin-left: 234.5px;
+}
+
+.operatorButton, #assignmentButton, .eraseButton, .numberButton
+{
+    border-radius: 10px;
+}
+
+.operatorButton, #assignmentButton, .eraseButton
+{
+    margin-right: 4.5px;
+    margin-top: 5px;
+    width: 70px;
+    height: 32px;
+}
+
+.numbers
+{
+    float: left;
+}
+
+.numberButton
+{
+    margin-left: 4.5px;
+    margin-top: 5px;
+    width: 70px;
+    height: 32px;
+}
+
+#zero
+{
+    position: absolute;
+    margin-left: 83px;
+
+}
+
+#dot
+{
+    margin-left: 162px;
+} 
+	
