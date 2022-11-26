@@ -9,22 +9,20 @@ let numPressed = true;
 //ACTUAL CALCULATOR OPERATIONS
 {
     //DISPLAY VALUE TO THE SCREEN
-    function displayValue()
-    {
+    function displayValue(){
         document.getElementById("displayBox").innerHTML =
         numberString;
+        console.log(numberString);
     }
 
     //RESETS THE VALUES
-    function clearValue()
-    {
+    function clearValue(){
         numberString = "";
         document.getElementById("displayBox").innerHTML = 0;
     }
 
     //DELETES THE LAST DIGIT
-    function deleteValue()
-    {
+    function deleteValue(){
         let array = numberString.split('');
         array.pop();
         numberString = array.join('');
@@ -32,23 +30,22 @@ let numPressed = true;
     }
 
     //ADD NUMBERS IN CORRECT DECIMAL POSITION
-    function concatNumbers(num)
-    {
+    function concatNumbers(num){
+        
         numberString = numberString + num;
         displayValue();
     }
 
     //OPERATOR SELECTION USING OPERATOR INDEX
-    function selectOperator(num)
-    {
+    function selectOperator(num){
         operatorIndex = parseFloat(num);
         value1 = parseFloat(numberString);
         numberString = "";
+
     }
 
     //PERFORM THE OPERATION ON VALUES
-    function operation(operator = 0)
-    {
+    function operation(operator = 0){
         value2 = parseFloat(numberString);
 
         if(operator == 1)
@@ -62,8 +59,7 @@ let numPressed = true;
         if(operator == 5)
             {numberString = value1 % value2; numberString = numberString.toString(10);}
 
-        if(numPressed!=0)
-        {
+        if(numPressed!=0){
             let temp = value2;
             value2 = value1;
             value1 = temp;
@@ -78,8 +74,7 @@ let numPressed = true;
 //ONCLICK ACTION FOR BUTTONS
 {
     //NUMBER BUTTON ACTION
-    for(let x of numbers)
-    {
+    for(let x of numbers){
         document.getElementsByClassName("numberButton")[x].onclick =
         function() {   numPressed++; concatNumbers(document.getElementsByClassName("numberButton")[x].value) };
     }
@@ -91,16 +86,14 @@ let numPressed = true;
     document.getElementById("deleteButton").onclick = function() {   deleteValue()    };
 
     //OPERATOR BUTTON ACTION
-    for(let x of operators)
-    {
+    for(let x of operators){
         document.getElementsByClassName("operatorButton")[x].onclick =
         function() {   selectOperator(document.getElementsByClassName("operatorButton")[x].value) };
     }
 
     //ASSIGNMENT BUTTON ACTION
     document.getElementById("assignmentButton").onclick =
-    function()  
-    {
+    function(){
         operation(operatorIndex);
         displayValue();
     };
