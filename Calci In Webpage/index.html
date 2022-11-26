@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Calculator  </title>
+        <link rel="stylesheet" href="Calci.css">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="Calci.js"></script>
+    </head>
+
+    <body>
+        <div id="container">
+
+                <div id="displayBox">   0   </div>      <hr style="width: 90%;">
+
+                <div class="operatorsDiv1">
+                    <button id="clearButton" class="eraseButton">Clear</button>
+                    <button id="deleteButton" class="eraseButton">Delete</button>
+                    <button class="operatorButton" value=5>%</button>
+                    <button class="operatorButton" value=4>/</button>
+                </div>
+
+                <div class="numbers">
+                    <button id="one" class="numberButton" value="1">1</button>
+                    <button id="two" class="numberButton" value="2">2</button>
+                    <button id="three" class="numberButton" value="3">3</button><br>
+                    <button id="four" class="numberButton" value="4">4</button>
+                    <button id="five" class="numberButton" value="5">5</button>
+                    <button id="six" class="numberButton" value="6">6</button><br>
+                    <button id="seven" class="numberButton" value="7">7</button>
+                    <button id="eight" class="numberButton" value="8">8</button>
+                    <button id="nine" class="numberButton" value="9">9</button><br>
+                    <button id="zero" class="numberButton" value="0">0</button>
+                    <button id="dot" class="numberButton" value=".">.</button><br>
+                </div>
+
+                <div class="operatorsDiv2">
+                    <button class="operatorButton" value=3>*</button>
+                    <button class="operatorButton" value=2>-</button>
+                    <button class="operatorButton" value=1>+</button>
+                    <button id="assignmentButton">=</button>
+                </div>
+        </div>
+        
+        <script src="CalciFunc.js"></script>
+    </body>
+</html>

@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body{
+                background-color: yellow;
+            }
+            .container{
+                display: flex;
+                justify-content: center;
+            }
+            button{
+                font-size: large;
+                font-weight: bold;
+                padding: .8em 1.5em;
+                margin: .2em;
+                border-radius: 10px;
+            }
+            button:focus{
+                background-color: gray;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1 id="watch"></h1>
+        </div>
+        <div class="container">
+            <button onclick=start()>Start</button>
+            <button onclick=stop()>Stop</button>
+            <button onclick=reset()>Reset</button>
+        </div>
+    </body>
+
+    <script>
+        let milliSecondsx10=0, seconds=0, minutes=0, hours=0;
+        let count;
+        let isStartOn = false;
+        function start(){
+            if (isStartOn==false){
+                count = setInterval(()=>{
+                    display();
+                    milliSecondsx10++;
+                    if(milliSecondsx10 == 100){
+                        seconds++;
+                        milliSecondsx10 = 0;
+                    }
+                    
+                    if(seconds == 60){
+                        minutes++;
+                        seconds = 0;
+                    }
+                    if(minutes == 60){
+                        hours++;
+                        minutes=0;
+                    }
+                }, 10);
+                isStartOn = true;
+            }
+        }
+
+    
+
+    function stop(){
+        clearInterval(count);
+        isStartOn = false;
+    }
+
+    function reset(){
+        clearInterval(count);
+        milliSecondsx10 = 0;
+        seconds = 0;
+        minutes = 0;
+        hours = 0;
+        display();
+        isStartOn = false;
+    }
+
+    function display(){
+        //console.log(hours = " : " + minutes + " : " + seconds);
+        if(milliSecondsx10<10 && milliSecondsx10[0]!=='0'){
+            milliSecondsx10  = "0" + milliSecondsx10;
+        }
+        if(seconds<10 && seconds[0]!=='0'){
+            seconds  = "0" + seconds;
+        }
+        if(minutes<10 && minutes[0]!=='0'){
+            minutes  = "0" + minutes;
+        }
+        document.getElementById("watch").innerHTML = minutes + " : " + seconds + " : " + milliSecondsx10;
+    }
+
+    display();
+
+    </script>
+</html>
+
